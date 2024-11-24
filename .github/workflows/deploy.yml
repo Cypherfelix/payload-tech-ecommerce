@@ -27,7 +27,7 @@ jobs:
 
           # Define variables
           APP_DIR="~/portfolio-projects/ecomerce-app"
-          REPO="https://github.com/${{GITHUB_REPOSITORY}}.git"
+          REPO="https://github.com/Cypherfelix/payload-tech-ecommerce.git"
           BRANCH="main"
 
           # Clone the repository if it doesn't exist
