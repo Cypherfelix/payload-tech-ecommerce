@@ -40,7 +40,7 @@ jobs:
           # Navigate to the application directory
           cd $APP_DIR
 
-          echo $ENV_CONTENT
+          echo $ENV_CONTENT > .env.local
 
           echo "Deployment complete."
 
