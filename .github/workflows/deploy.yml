@@ -29,7 +29,7 @@ jobs:
           APP_DIR="portfolio-projects/ecomerce-app"
           REPO="https://github.com/Cypherfelix/payload-tech-ecommerce.git"
           BRANCH="main"
-          ENV_CONTENT="${{ secrets.VM_SSH_PRIVATE_KEY }}"
+          ENV_CONTENT="${{ secrets.ENV_CONTENT }}"
 
           # Clone the repository if it doesn't exist
           if [ ! -d "$APP_DIR" ]; then
@@ -41,6 +41,23 @@ jobs:
           cd $APP_DIR
 
           echo $ENV_CONTENT > .env.local
+
+          # Pull the latest changes
+
+            git pull origin $BRANCH
+            echo "Pulling the latest changes..."
+
+            # Install dependencies
+            echo "Installing dependencies..."
+            npm install
+
+            # Build the application
+            echo "Building the application..."
+            npm run build
+
+            # Restart the application
+            echo "Restarting the application..."
+            npm run serve
 
           echo "Deployment complete."
 
