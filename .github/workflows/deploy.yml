@@ -26,7 +26,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_IP }} << 'EOF'
 
           # Define variables
-          APP_DIR="~/portfolio-projects/ecomerce-app"
+          APP_DIR="portfolio-projects/ecomerce-app"
           REPO="https://github.com/Cypherfelix/payload-tech-ecommerce.git"
           BRANCH="main"
 
@@ -39,7 +39,7 @@ jobs:
           # Navigate to the application directory
           cd $APP_DIR
 
-          ls -la $APP_DIR
+          ls -la
 
           echo "Deployment complete."
 
