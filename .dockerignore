@@ -1,0 +1,22 @@
+# Ignore node_modules
+node_modules
+
+# Ignore build artifacts
+build
+
+# Ignore local environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore any other unwanted files or folders
+.DS_Store
+
+.next
+
+dist
+/media
+
+.vercel
+
