@@ -52,6 +52,11 @@ jobs:
           git fetch origin $BRANCH
           git reset --hard origin/$BRANCH
 
+          # Build and restart the container
+          echo "Building and restarting the container..."
+          sudo docker-compose down --volumes
+          sudo docker-compose up --build -d
+
           echo "Deployment complete."
 
           EOF
