@@ -42,13 +42,15 @@ jobs:
           # Navigate to the application directory
           cd $APP_DIR
 
-          # Pull the latest changes
-          echo "Pulling the latest changes..."
+          # Ensure no local changes block the pull
+          echo "Resetting local changes..."
+          git reset --hard HEAD
+          git clean -fd
 
-          git pull origin $BRANCH
-
-
-          ls
+          # Fetch and force sync with remote
+          echo "Fetching and force syncing with remote..."
+          git fetch origin $BRANCH
+          git reset --hard origin/$BRANCH
 
           echo "Deployment complete."
 
