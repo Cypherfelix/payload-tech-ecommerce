@@ -37,8 +37,16 @@ jobs:
             git clone -b $BRANCH $REPO $APP_DIR
           fi
 
+          echo "Setting environment variables..."
+
           # Navigate to the application directory
           cd $APP_DIR
+
+          # Pull the latest changes
+          echo "Pulling the latest changes..."
+
+          git pull origin $BRANCH
+
 
           ls
 
